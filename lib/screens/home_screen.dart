@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             _buildButton(
               context,
-              'Notifier (현재 방식)',
+              'Riverpod Notifier',
               () => Navigator.push(
                 context,
                 MaterialPageRoute(
