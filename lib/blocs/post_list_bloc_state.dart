@@ -4,15 +4,15 @@ import '../entities/post.dart';
 part 'post_list_bloc_state.freezed.dart';
 
 @freezed
-class PostListBlocState with _$PostListBlocState {
-  const factory PostListBlocState({
-    @Default([]) List<Post> posts,
-    @Default(false) bool isLoading,
-    @Default(false) bool isLoadingMore,
-    @Default(false) bool hasError,
-    @Default('') String errorMessage,
-    @Default(1) int currentPage,
-    @Default(false) bool hasMore,
-  }) = _PostListBlocState;
+sealed class PostListBlocState with _$PostListBlocState {
+  const factory PostListBlocState.initial() = _Initial;
+  const factory PostListBlocState.loading() = _Loading;
+  const factory PostListBlocState.loaded({required List<Post> posts, required int currentPage, required bool hasMore}) =
+      _Loaded;
+  const factory PostListBlocState.loadingMore({
+    required List<Post> posts,
+    required int currentPage,
+    required bool hasMore,
+  }) = _LoadingMore;
+  const factory PostListBlocState.error({required String errorMessage, List<Post>? posts}) = _Error;
 }
-

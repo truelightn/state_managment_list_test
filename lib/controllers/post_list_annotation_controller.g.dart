@@ -44,7 +44,7 @@ final postRepositoryAnnotationProvider =
 // ignore: unused_element
 typedef PostRepositoryAnnotationRef = AutoDisposeProviderRef<PostRepository>;
 String _$postListAnnotationControllerHash() =>
-    r'8f2bb4556c0492d246c144c661b6609e2c74ace5';
+    r'f29e790cdd83e8bf8d0f7913e2f32403708b0997';
 
 /// See also [PostListAnnotationController].
 @ProviderFor(PostListAnnotationController)

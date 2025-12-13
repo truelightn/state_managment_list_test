@@ -1,16 +1,10 @@
-abstract class PostListEvent {
-  const PostListEvent();
-}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class LoadPostsEvent extends PostListEvent {
-  const LoadPostsEvent();
-}
+part 'post_list_event.freezed.dart';
 
-class RefreshPostsEvent extends PostListEvent {
-  const RefreshPostsEvent();
+@freezed
+sealed class PostListEvent with _$PostListEvent {
+  const factory PostListEvent.loadPosts() = LoadPostsEvent;
+  const factory PostListEvent.refreshPosts() = RefreshPostsEvent;
+  const factory PostListEvent.loadMorePosts() = LoadMorePostsEvent;
 }
-
-class LoadMorePostsEvent extends PostListEvent {
-  const LoadMorePostsEvent();
-}
-
